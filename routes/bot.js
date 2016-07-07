@@ -2,11 +2,14 @@
 const Bot = require('messenger-bot');
 const GuMessageEngine = require('../lib/engines/guMessageEngine.js');
 const GuPostbackEngine = require('../lib/engines/guPostbackEngine.js');
+const GuSessionManager = require('../lib/session/guSession.js');
 const express = require('express');
 
 let router = express.Router();
 let messageEngine = new GuMessageEngine();
 let postbackEngine = new GuPostbackEngine();
+let sessionManager = new GuSessionManager();
+
 let bot = new Bot({
     token: 'EAADtS47PWpoBAC068H525YNbvst47A8ewmeaB4kOrl1orZB3UfJQoa8aaZBZC5zSZB6T8YXjK87uYxVvsgJaGHNSV8WFVqmcDzgl4pCTUZB8LjD9zY9sUA8tpQQtNu8w94JNnawJBhtiZBqG1EYk43se6zQ98NrwrQlzKFvjj5EwZDZD',
     verify: 'VERIFY_TOKEN',
@@ -19,11 +22,12 @@ bot.on('error', (err) => {
 
 bot.on('message', (payload, reply) => {
     console.log(`Received message from ${payload.sender.id}`);
-
-    messageEngine.process(payload, (response) => {
-        reply(response, (err) => {
-            if (err) throw err
-
+    messageEngine.process(
+        payload, 
+        sessionManager.getSession(payload.sender.id),
+        (response) => {
+            reply(response, (err) => {
+                if (err) throw err
         });
     });
 
