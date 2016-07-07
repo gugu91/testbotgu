@@ -1,0 +1,153 @@
+{
+    "interview": {
+        "name": "Interview1",
+        "questions": [
+            {
+                "order": 0,
+                "id": "1",
+                "title": "Ciao, vuoi aprire un ticket?",
+                "type": "YesNot",
+                "url":  "",
+                "answers": [
+                    {
+                        "order": 0,
+                        "id": "10",
+                        "title": "Si",
+                        "tag": "ok,OK,yes,si",
+                        "nextQuestionId": "2",
+                        "url":  ""
+                    },
+                    {
+                        "order": 1,
+                        "title": "No",
+                        "tag": "no,NO,ko",
+                        "id": "11",
+                        "nextQuestionId": "999",
+                        "url":  ""
+                    }
+                ]
+            },
+            {
+                "order": 1,
+                "id": "2",
+                "title": "Disponi di un codice assistenza?",
+                "type": "YesNot",
+                "url": "",
+                "answers": [
+                    {
+                        "order": 0,
+                        "id": "12",
+                        "title": "Si",
+                        "tag": "ok,OK,yes",
+                        "nextQuestionId": "3",
+                        "url": "",
+                        "action": "getCRMProfile()"
+                    },
+                    {
+                        "order": 1,
+                        "title": "No",
+                        "id": "13",
+                        "nextQuestionId": "3",
+                        "url": "",
+                        "action": "getFBProfile()"
+                    }
+                ]
+            },
+            {
+                "order": 2,
+                "id": "3",
+                "title": "Allora apro il ticket a tuo nome {0}",
+                "type": "YesNot",
+                "url": "",
+                "answers": [
+                    {
+                        "order": 0,
+                        "id": "14",
+                        "title": "Si",
+                        "tag": "ok,OK,yes",
+                        "nextQuestionId": "4",
+                        "url": ""
+                    },
+                    {
+                        "order": 1,
+                        "title": "No",
+                        "id": "15",
+                        "nextQuestionId": "999",
+                        "url": ""
+                    }
+                ]
+            },
+            {
+                "order": 3,
+                "id": "4",
+                "title": "Per quale famiglia di veicoli vuoi assistenza?",
+                "type": "Choise",
+                "url": "",
+                "answers": [
+                    {
+                        "order": 0,
+                        "id": "16",
+                        "title": "Trattatore",
+                        "tag": "ok,OK,yes",
+                        "nextQuestionId": "5",
+                        "url": ""
+                    },
+                    {
+                        "order": 1,
+                        "title": "Camion",
+                        "id": "17",
+                        "nextQuestionId": "5",
+                        "url": ""
+                    }
+                ]
+            },
+            {
+                "order": 4,
+                "id": "5",
+                "title": "Dove vuoi ricevere assistenza?",
+                "type": "Text",
+                "url": "",
+                "answers": [
+                    {
+                        "order": 0,
+                        "id": "18",
+                        "title": "",                    
+                        "nextQuestionId": "6",
+                        "url": ""
+                    }
+                ]
+            },
+            {
+                "order": 5,
+                "id": "6",
+                "title": "Descrivi brevemente il problema",
+                "type": "Text",
+                "url": "",
+                "answers": [
+                    {
+                        "order": 0,
+                        "id": "19",
+                        "title": "",                        
+                        "nextQuestionId": "888",
+                        "url": ""
+                    }
+                ]
+            },
+            {
+                "order": 99999,
+                "id": "888",
+                "title": "Grazie, sarai contattato al più presto dal servizio clienti.",
+                "type": "Close",
+                "url":  ""
+            },
+            {
+                "order": 99999,
+                "id": "999",
+                "title": "Grazie alla prossima.",
+                "type": "Close",
+                "url":  ""
+            }
+        ]
+    }
+}
+
