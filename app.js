@@ -14,6 +14,7 @@ let bot = require('./routes/bot');
 let app = express();
 
 let env = process.env.NODE_ENV || 'development';
+console.log('NODE_ENV: ' + env);
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
 
