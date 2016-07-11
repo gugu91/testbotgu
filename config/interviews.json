@@ -1,63 +1,63 @@
-{
-    "interview": {
+[
+    {
         "name": "Interview1",
-        "questions": [
-            {
+        "firstQuestionId": 0,
+        "questions": {
+            "0": {
                 "order": 0,
-                "id": "1",
                 "title": "Ciao, vuoi aprire un ticket?",
-                "type": "YesNot",
-                "url":  "",
+                "subTitle": "",
+                "type": "choice",
+                "url": "",
+                "imageUrl": "",
                 "answers": [
                     {
                         "order": 0,
                         "id": "10",
                         "title": "Si",
-                        "tag": "ok,OK,yes,si",
-                        "nextQuestionId": "2",
-                        "url":  ""
+                        "tag": ["ok" , "OK", "yes", "si"],
+                        "nextQuestionId": "1"
                     },
                     {
                         "order": 1,
                         "title": "No",
-                        "tag": "no,NO,ko",
+                        "tag": ["no", "NO", "ko"],
                         "id": "11",
-                        "nextQuestionId": "999",
-                        "url":  ""
+                        "nextQuestionId": "999"
                     }
                 ]
             },
-            {
+            "1": {
                 "order": 1,
-                "id": "2",
                 "title": "Disponi di un codice assistenza?",
-                "type": "YesNot",
+                "type": "choice",
                 "url": "",
                 "answers": [
                     {
                         "order": 0,
                         "id": "12",
                         "title": "Si",
-                        "tag": "ok,OK,yes",
-                        "nextQuestionId": "3",
-                        "url": "",
+                        "tag": ["ok" , "OK", "yes", "si"],
+                        "nextQuestionId": "2",
                         "action": "getCRMProfile()"
                     },
                     {
                         "order": 1,
                         "title": "No",
+                        "tag": ["no", "NO", "ko"],
                         "id": "13",
-                        "nextQuestionId": "3",
-                        "url": "",
+                        "nextQuestionId": "2",
                         "action": "getFBProfile()"
                     }
                 ]
             },
-            {
+            "2": {
                 "order": 2,
-                "id": "3",
                 "title": "Allora apro il ticket a tuo nome {0}",
-                "type": "YesNot",
+                "dataContextRequire": [
+                    "name"
+                ],
+                "type": "choice",
                 "url": "",
                 "answers": [
                     {
@@ -65,89 +65,81 @@
                         "id": "14",
                         "title": "Si",
                         "tag": "ok,OK,yes",
-                        "nextQuestionId": "4",
-                        "url": ""
+                        "nextQuestionId": "3"
                     },
                     {
                         "order": 1,
                         "title": "No",
                         "id": "15",
-                        "nextQuestionId": "999",
-                        "url": ""
+                        "nextQuestionId": "999"
                     }
                 ]
             },
-            {
+            "3": {
                 "order": 3,
-                "id": "4",
                 "title": "Per quale famiglia di veicoli vuoi assistenza?",
-                "type": "Choise",
+                "type": "choice",
                 "url": "",
                 "answers": [
                     {
                         "order": 0,
                         "id": "16",
                         "title": "Trattatore",
-                        "tag": "ok,OK,yes",
-                        "nextQuestionId": "5",
-                        "url": ""
+                        "nextQuestionId": "4",
+                        "action": "setVehicle()"
                     },
                     {
                         "order": 1,
                         "title": "Camion",
                         "id": "17",
-                        "nextQuestionId": "5",
-                        "url": ""
+                        "nextQuestionId": "4",
+                        "action": "setVehicle()"
                     }
                 ]
             },
-            {
+            "4": {
                 "order": 4,
                 "id": "5",
                 "title": "Dove vuoi ricevere assistenza?",
-                "type": "Text",
+                "type": "text",
                 "url": "",
                 "answers": [
                     {
                         "order": 0,
                         "id": "18",
-                        "title": "",                    
-                        "nextQuestionId": "6",
-                        "url": ""
+                        "title": "",
+                        "nextQuestionId": "5",
+                        "action": "setLocation()"
                     }
                 ]
             },
-            {
+            "5": {
                 "order": 5,
-                "id": "6",
                 "title": "Descrivi brevemente il problema",
-                "type": "Text",
+                "type": "text",
                 "url": "",
                 "answers": [
                     {
                         "order": 0,
                         "id": "19",
-                        "title": "",                        
+                        "title": "",
                         "nextQuestionId": "888",
-                        "url": ""
+                        "action": "setProblem()"
                     }
                 ]
             },
-            {
+            "888": {
                 "order": 99999,
-                "id": "888",
                 "title": "Grazie, sarai contattato al più presto dal servizio clienti.",
-                "type": "Close",
-                "url":  ""
+                "type": "close",
+                "url": ""
             },
-            {
+            "999": {
                 "order": 99999,
-                "id": "999",
                 "title": "Grazie alla prossima.",
-                "type": "Close",
-                "url":  ""
+                "type": "close",
+                "url": ""
             }
-        ]
+        }
     }
-}
-
+]

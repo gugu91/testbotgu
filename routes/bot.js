@@ -1,8 +1,9 @@
-'use strict'
+'use strict';
 const Bot = require('messenger-bot');
 const GuMessageEngine = require('../lib/engines/guMessageEngine.js');
 const GuPostbackEngine = require('../lib/engines/guPostbackEngine.js');
 const GuSessionManager = require('../lib/session/guSession.js');
+const botConfig = require('../config/botStaging.json');
 const express = require('express');
 
 let router = express.Router();
@@ -10,24 +11,20 @@ let messageEngine = new GuMessageEngine();
 let postbackEngine = new GuPostbackEngine();
 let sessionManager = new GuSessionManager();
 
-let bot = new Bot({
-    token: 'EAADtS47PWpoBAC068H525YNbvst47A8ewmeaB4kOrl1orZB3UfJQoa8aaZBZC5zSZB6T8YXjK87uYxVvsgJaGHNSV8WFVqmcDzgl4pCTUZB8LjD9zY9sUA8tpQQtNu8w94JNnawJBhtiZBqG1EYk43se6zQ98NrwrQlzKFvjj5EwZDZD',
-    verify: 'VERIFY_TOKEN',
-    app_secret: '536ee5ee81645557826fd89543c56886'
-});
+let bot = new Bot(botConfig);
 
 bot.on('error', (err) => {
-    console.log(err.message)
-})
+    console.log(err.message);
+});
 
 bot.on('message', (payload, reply) => {
     console.log(`Received message from ${payload.sender.id}`);
-    messageEngine.process(
+    messageEngine.reply(
         payload, 
         sessionManager.getSession(payload.sender.id),
         (response) => {
             reply(response, (err) => {
-                if (err) throw err
+                if (err) console.log(err.message);
         });
     });
 
@@ -45,21 +42,23 @@ bot.on('message', (payload, reply) => {
 bot.on('postback', (payload, reply) => {
     console.log(`Received postback from ${payload.sender.id}`);
 
-    postbackEngine.process(payload, (response) => {
-        reply(response, (err) => {
-            if (err) throw err
-
+    postbackEngine.reply(
+        payload, 
+        sessionManager.getSession(payload.sender.id),
+        (response) => {
+            reply(response, (err) => {
+                if (err) console.log(err.message);
         });
     });
 });
 
 router.get('/', (req, res) => {
-    return bot._verify(req, res)
+    return bot._verify(req, res);
 });
 
 router.post('/', (req, res) => {
-    bot._handleMessage(req.body)
-    res.end(JSON.stringify({ status: 'ok' }))
+    bot._handleMessage(req.body);
+    res.end(JSON.stringify({ status: 'ok' }));
 });
 
 module.exports = router;
