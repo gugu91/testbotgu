@@ -3,7 +3,7 @@ const Bot = require('messenger-bot');
 const GuMessageEngine = require('../lib/engines/guMessageEngine.js');
 const GuPostbackEngine = require('../lib/engines/guPostbackEngine.js');
 const GuSessionManager = require('../lib/session/guSession.js');
-const botConfig = require('../config/botStaging.json');
+const botConfig = require('../config/bot_' + process.env.BOT_CONFIG + '.json');
 const express = require('express');
 
 let router = express.Router();
