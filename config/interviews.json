@@ -8,8 +8,8 @@
                 "title": "Ciao, vuoi aprire un ticket?",
                 "subTitle": "Un ticket ti permetterà di ricere assistenza riguardo ai nostri prodotti",
                 "type": "choice",
-                "url": "",
-                "imageUrl": "",
+                "url": "www.reply.eu",
+                "imageUrl": "http://d11wkw82a69pyn.cloudfront.net/siteassets/images/careers/careerreplylogobig.png",
                 "answers": [
                     {
                         "order": 0,
