@@ -13,7 +13,6 @@ let sessionManager = new GuSessionManager();
 
 let bot = new Bot(botConfig);
 
-
 bot.on('error', (err) => {
     console.log(err.message);
 });

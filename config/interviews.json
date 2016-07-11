@@ -6,7 +6,7 @@
             "0": {
                 "order": 0,
                 "title": "Ciao, vuoi aprire un ticket?",
-                "subTitle": "",
+                "subTitle": "Un ticket ti permetterà di ricere assistenza riguardo ai nostri prodotti",
                 "type": "choice",
                 "url": "",
                 "imageUrl": "",
