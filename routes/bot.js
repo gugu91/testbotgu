@@ -11,6 +11,7 @@ let messageEngine = new GuMessageEngine();
 let postbackEngine = new GuPostbackEngine();
 let sessionManager = new GuSessionManager();
 
+console.log(botConfig);
 let bot = new Bot(botConfig);
 
 bot.on('error', (err) => {
