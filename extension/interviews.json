@@ -1,6 +1,6 @@
 [
     {
-        "name": "Interview1",
+        "name": "interview1",
         "firstQuestionId": 0,
         "questions": {
             "0": {
@@ -39,7 +39,7 @@
                         "title": "Si",
                         "tag": ["ok" , "OK", "yes", "si"],
                         "nextQuestionId": "2",
-                        "action": "getCRMProfile()"
+                        "action": "getCRMProfile"
                     },
                     {
                         "order": 1,
@@ -47,15 +47,15 @@
                         "tag": ["no", "NO", "ko"],
                         "id": "13",
                         "nextQuestionId": "2",
-                        "action": "getFBProfile()"
+                        "action": "getFBProfile"
                     }
                 ]
             },
             "2": {
                 "order": 2,
-                "title": "Allora apro il ticket a tuo nome {0}",
+                "title": "Allora apro il ticket a tuo nome {customerName}",
                 "dataContextRequire": [
-                    "name"
+                    "customerName"
                 ],
                 "type": "choice",
                 "url": "",
@@ -86,14 +86,14 @@
                         "id": "16",
                         "title": "Trattatore",
                         "nextQuestionId": "4",
-                        "action": "setVehicle()"
+                        "contextAs": "vechicle"
                     },
                     {
                         "order": 1,
                         "title": "Camion",
                         "id": "17",
                         "nextQuestionId": "4",
-                        "action": "setVehicle()"
+                        "contextAs": "vechicle"
                     }
                 ]
             },
@@ -109,7 +109,7 @@
                         "id": "18",
                         "title": "",
                         "nextQuestionId": "5",
-                        "action": "setLocation()"
+                        "contextAs": "location"
                     }
                 ]
             },
@@ -124,7 +124,7 @@
                         "id": "19",
                         "title": "",
                         "nextQuestionId": "888",
-                        "action": "setProblem()"
+                        "contextAs": "problem"
                     }
                 ]
             },
