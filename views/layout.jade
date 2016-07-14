@@ -2,10 +2,14 @@ doctype html
 html(lang='en' ng-app='guBotApp')
   head
     meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title= title
     block css
       link(rel='stylesheet', href='/css/style.css')
+      link(rel='stylesheet', href='/css/chat.css')
+      link(rel='stylesheet', href='components/animate.css/animate.min.css')
+      link(rel="stylesheet" href="components/material-design-lite/material.min.css")
+      link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
     block js
       script(src='components/jquery/dist/jquery.min.js')
       script(src='components/angular/angular.min.js')
@@ -16,5 +20,6 @@ html(lang='en' ng-app='guBotApp')
       script(src='js/angular/app.js')
       script(src='js/angular/route.js')
       script(src='js/angular/controllers/interview.js')
+      script(src="components/material-design-lite/material.min.js")
   body(ng-controller='homeController')
     block content
