@@ -9,6 +9,7 @@ let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
 let routes = require('./routes/index');
+let partials = require('./routes/partial');
 let bot = require('./routes/bot');
 
 let app = express();
@@ -34,6 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/partial', partials);
 app.use('/bot', bot);
 
 /// catch 404 and forward to error handler
@@ -50,6 +52,7 @@ app.use(function(req, res, next) {
 
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
+        console.log(err.message);
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,

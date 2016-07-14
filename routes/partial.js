@@ -4,8 +4,8 @@ let router = express.Router();
 
 /* GET home page. */
 
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+router.get('/interviews/index', function(req, res) {
+  res.render('partial/interviews/index', { title: 'Interviews' });
 });
 
 module.exports = router;
