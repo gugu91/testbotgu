@@ -1,11 +1,7 @@
-div.message-wrapper.them
-	div.circle-wrapper.animated.bounceIn
-		div.img-thumb(style="background-image: url('img/guBotLogo32.png')")
-	div.text-wrapper.animated.fadeIn
-		form
-			div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-				input.mdl-textfield__input(id="sample3", type="text")
-				label.mdl-textfield__label(for="sample3") Bot says...
-div.message-wrapper.me
-	div.circle-wrapper.animated.bounceIn
-	div.text-wrapper.animated.fadeIn {{interviews.title}}
+gu-message(gu-type="them" gu-placeholder="User says anything..." gu-content="interviews.title")
+gu-message(gu-type="me" gu-placeholder=" (required) Bot says..." gu-thumb-url="img/guBotLogo32.png")
+gu-message(gu-type="them" gu-placeholder="User says anything...")
+button.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored
+	i.material-icons add
+
+

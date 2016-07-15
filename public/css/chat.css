@@ -9,18 +9,16 @@
 
 .message-wrapper .circle-wrapper {
   box-sizing: border-box;
-  height: 42.66667px;
-  width: 42.66667px;
-  border-radius: 50%;
+  cursor: default;
 }
 
 .message-wrapper .text-wrapper {
   box-sizing: border-box;
   padding: 10.66667px;
-  min-height: 42.66667px;
+  min-height: 56px;
   width: 60%;
   margin: 0 10.66667px;
-  box-shadow: 0px 1px 0px 0px rgba(50, 50, 50, 0.3);
+  box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
   border-radius: 2px;
   font-weight: 300;
   position: relative;
@@ -51,21 +49,20 @@
   background-repeat: no-repeat;
   background-position: center;
   display: inline-block;
-  height: 42.66667px;
-  width: 42.66667px;
+  height: 56px;
+  width: 56px;
 }
 
 .message-wrapper.them .text-wrapper {
   box-sizing: border-box;
-  background: #e0edff;
+  background: #C7EDFC;
   float: left;
-  color: #ffffff;
 }
 
 .message-wrapper.them .text-wrapper:before {
   box-sizing: border-box;
   border-width: 0 10px 10px 0;
-  border-color: transparent #e0edff transparent transparent;
+  border-color: transparent #C7EDFC transparent transparent;
   position: absolute;
   top: 0;
   left: -9px;
@@ -95,4 +92,9 @@
   position: absolute;
   top: 0;
   right: -9px;
+}
+
+.message-textarea{ 
+  height:0px;
+  width:100%;
 }

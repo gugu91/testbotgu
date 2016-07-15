@@ -1,0 +1,18 @@
+textarea {
+   resize: none;
+}
+
+body {
+    background-color: #F5F8FA
+}
+
+.mdl-layout__drawer-button > i {
+    position: relative;
+    bottom: 6px;
+}
+
+@media screen and (max-width: 1024px){
+    .mdl-layout__drawer-button > i {
+        bottom: 0px;
+    }
+}

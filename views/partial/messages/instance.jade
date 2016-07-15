@@ -1,0 +1,12 @@
+div.message-wrapper(ng-class="guType")
+	div.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored.circle-wrapper.animated.bounceIn
+		div.img-thumb(ng-if="guThumbUrl" style="background-image: url('{{ guThumbUrl }}')")
+	div.text-wrapper.animated.fadeIn
+		form
+			div.mdl-textfield.mdl-js-textfield(style="width: 100%")
+				textarea.mdl-textfield__input.message-textarea.gu-elastic(id="sample3", type="text", ng-model="guContent")
+				label.mdl-textfield__label(for="sample3") {{ guPlaceholder }}
+			i.material-icons add
+			div.mdl-textfield.mdl-js-textfield
+				input#sample1.mdl-textfield__input(type="text")
+				label.mdl-textfield__label(for="sample1") Answer...
