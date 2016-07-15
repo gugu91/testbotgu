@@ -1,8 +1,11 @@
 div.message-wrapper.them
 	div.circle-wrapper.animated.bounceIn
+		div.img-thumb(style="background-image: url('img/guBotLogo32.png')")
 	div.text-wrapper.animated.fadeIn
-		{{interviews.title}}
+		form
+			div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+				input.mdl-textfield__input(id="sample3", type="text")
+				label.mdl-textfield__label(for="sample3") Bot says...
 div.message-wrapper.me
 	div.circle-wrapper.animated.bounceIn
-	div.text-wrapper.animated.fadeIn
-		{{interviews.title}}
+	div.text-wrapper.animated.fadeIn {{interviews.title}}
